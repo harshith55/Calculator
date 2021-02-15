@@ -1,0 +1,154 @@
+<html>
+<head>
+<style>
+body
+{
+	background-image:url("background.jpg");
+}
+.box
+{
+	height:500px;
+	width:330px;
+	margin-top:50px;
+	margin-left:520px;
+	background-color:#BCBBBA;
+	border-radius:50px;
+	box-shadow:0 4px 8px 0 rgba(0,0,0,0.4),0 6px 20px 0 rgba(0,0,0,0.1);
+}
+.displaydesign
+{
+	background-color:#BCBBBA;
+
+	height:100px;
+	width:330px;
+	border-top-left-radius:50px;
+	border-top-right-radius:50px;
+	font-size:30px;
+	font-weight:700;
+	color:#373332;
+	text-align:right;
+	float:right;
+	padding-right:20px;
+	border:none;
+}
+.buttondesign
+{
+	width:50px;
+	height:50px;
+	background:#ecedef;
+	font-size:15px;
+	font-weight:700;
+	color:#36332C;
+	border-radius:50%;
+	border:none;
+	cursor:pointer;
+	margin:20px 5px 5px 20px;
+	outline:none;
+}
+.buttondesign#percent
+{
+	
+	background:#5E76F5;
+	
+}
+.buttondesign#division 
+{
+	
+	background-color:#F4950B;
+	
+}
+.buttondesign#multiplication
+{
+
+	background-color:#F0565D;
+	
+}
+.buttondesign#addition
+{
+	
+	background-color:#5CF5F3;
+	
+}
+.buttondesign#equals
+{
+	
+	background-color:#6873AF;
+	
+}
+.buttondesign#subtraction
+{
+
+	background-color:#E5FA69;
+	
+}
+
+</style>
+<script>
+function display(val)
+{
+document.getElementById("final_output").value+=val;
+}
+function solve()
+{
+	var expr=document.getElementById("final_output").value;
+	var soln=eval(expr);
+	document.getElementById("final_output").value=soln;
+}
+function clr()
+{
+	document.getElementById("final_output").value = "";
+}
+function del()
+{
+	var value=document.getElementById("final_output").value;
+	document.getElementById("final_output").value = value.substr(0,value.length-1);
+}
+function percent()
+{
+	var num=document.getElementById("final_output").value;
+	num=eval(num/100);
+	document.getElementById("final_output").value=num;
+}
+</script>
+</head>
+<body>
+<h1><center>SIMPLE  CALCULATOR</center></h1>
+<div class="box">
+<input type="text" class="displaydesign" id="final_output"><br/>
+<button type="button" class="buttondesign" onclick="del()">C</button>
+<button type="button" class="buttondesign" onclick="clr()">CE</button>
+<button type="button" class="buttondesign" id="percent" onclick="percent()">%</button>
+<button type="button" class="buttondesign" id="division" onclick="display('/')">/</button><br/>
+<button type="button" class="buttondesign" onclick="display('7')">7</button>
+<button type="button" class="buttondesign" onclick="display('8')">8</button>
+<button type="button" class="buttondesign" onclick="display('9')">9</button>
+<button type="button" class="buttondesign" id="addition" onclick="display('+')">+</button><br/>
+<button type="button" class="buttondesign" onclick="display('4')">4</button>
+<button type="button" class="buttondesign" onclick="display('5')">5</button>
+<button type="button" class="buttondesign" onclick="display('6')">6</button>
+<button type="button" class="buttondesign" id="subtraction" onclick="display('-')">-</button><br/>
+<button type="button" class="buttondesign" onclick="display('1')">1</button>
+<button type="button" class="buttondesign" onclick="display('2')">2</button>
+<button type="button" class="buttondesign" onclick="display('3')">3</button>
+<button type="button" class="buttondesign" id="multiplication" onclick="display('*')">*</button><br/>
+<button type="button" class="buttondesign" onclick="display('.')">.</button>
+<button type="button" class="buttondesign" onclick="display('0')">0</button>
+<button type="button" class="buttondesign" onclick="display('00')">00</button>
+
+<button type="button" class="buttondesign" id="equals" onclick="solve()">=</button>
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
